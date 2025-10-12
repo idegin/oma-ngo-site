@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "OMA NGO - Home",
@@ -69,7 +70,9 @@ export default function RootLayout({
         <div className="custom-cursor__cursor-two"></div>
 
         <Header />
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Footer />
 
         {/* Vendor Scripts */}

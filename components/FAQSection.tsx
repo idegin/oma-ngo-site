@@ -1,8 +1,17 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 
 type Props = {}
 
 export default function FAQSection({ }: Props) {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        setShow(true);
+    },[])
+
+    if (!show) return false;
+
     return (
         <>
             <section className="faq-one">

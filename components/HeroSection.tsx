@@ -35,9 +35,9 @@ export default function HeroSection({ }: Props) {
                             <div className="container">
                                 <div className="row">
                                     <div className="col-xl-6 col-lg-8">
-                                        <div className="main-slider__content">
-                                            <p className="main-slider__sub-title- text-3xl text-white">Always donate for childrens</p>
-                                            <h2 className="main-slider__title">Lend a Helping Hand to Those in Need</h2>
+                                        <div className="main-slider__content-">
+                                            <p className="main-slider__sub-title text-[var(--oxpins-primary)]">Always donate for children</p>
+                                            <h1 className="main-slider__title text-white">Lend a Helping Hand to Those in Need</h1>
                                             <div className="main-slider__btn-box">
                                                 <a href="about.html" className="thm-btn main-slider__btn"> Discover more</a>
                                             </div>
@@ -47,7 +47,7 @@ export default function HeroSection({ }: Props) {
                             </div>
                         </div>
 
-                        <div className="swiper-slide">
+                        {/* <div className="swiper-slide">
                             <div className="image-layer"
                                 style={{ backgroundImage: "url(assets/images/backgrounds/main-slider-1-2.png)" }}></div>
 
@@ -95,7 +95,7 @@ export default function HeroSection({ }: Props) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
 

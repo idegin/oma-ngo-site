@@ -4,7 +4,7 @@ export default function Footer() {
   return (
       <>
       <footer className="site-footer">
-            <div className="site-footer-bg" style={{ backgroundImage: "url(assets/images/backgrounds/site-footer-bg.jpg)" }}>
+            <div className="site-footer-bg" style={{ backgroundImage: "url(/assets/images/backgrounds/site-footer-bg.jpg)" }}>
             </div>
             <div className="site-footer__top">
                 <div className="container">
@@ -12,7 +12,7 @@ export default function Footer() {
                         <div className="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                             <div className="footer-widget__column footer-widget__about">
                                 <div className="footer-widget__about-logo">
-                                    <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""/></a>
+                                    <a href="index.html"><img src="/brand/logo-white.png" alt=""/></a>
                                 </div>
                                 <div className="footer-widget__about-text-box">
                                     <p className="footer-widget__about-text">Nulla ultricies justo sit amet ante efficitur,

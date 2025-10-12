@@ -24,11 +24,11 @@
   --oxpins-gray-rgb: 111, 119, 117;
   --oxpins-white: #ffffff;
   --oxpins-white-rgb: 255, 255, 255;
-  --oxpins-base: #00715d;
+  --oxpins-base: #0B5931;
   --oxpins-base-rgb: 0, 113, 93;
   --oxpins-black: #283734;
   --oxpins-black-rgb: 40, 55, 52;
-  --oxpins-primary: #fbd45a;
+  --oxpins-primary: #D8C14F;
   --oxpins-primary-rgb: 251, 212, 90;
   --oxpins-extra: #f9f4e8;
   --oxpins-extra-rgb: 249, 244, 232;
@@ -2447,16 +2447,16 @@ body.locked .page-wrapper {
   font-weight: 700;
   line-height: 40px;
   font-family: var(--oxpins-font-three);
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-120px);
+  opacity: 100;
+  visibility: visible;
+  /* -webkit-transform: translateY(-120px);
   transform: translateY(-120px);
   -webkit-transition-delay: 1000ms;
   transition-delay: 1000ms;
   -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
   transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
   transition: transform 2000ms ease, opacity 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
+  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease; */
 }
 
 .main-slider__title {
@@ -2468,31 +2468,31 @@ body.locked .page-wrapper {
   letter-spacing: -0.04em;
   margin-top: 24px;
   margin-bottom: 26px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-120px);
+  opacity: 100;
+  visibility: visible;
+  /* -webkit-transform: translateY(-120px);
   transform: translateY(-120px);
   -webkit-transition-delay: 1000ms;
   transition-delay: 1000ms;
   -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
   transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
   transition: transform 2000ms ease, opacity 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
+  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease; */
 }
 
 .main-slider__btn-box {
   position: relative;
   display: block;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(120px);
+  opacity: 100;
+  visibility: visible;
+  /* -webkit-transform: translateY(120px);
   transform: translateY(120px);
   -webkit-transition-delay: 1000ms;
   transition-delay: 1000ms;
   -webkit-transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
   transition: opacity 2000ms ease, -webkit-transform 2000ms ease;
   transition: transform 2000ms ease, opacity 2000ms ease;
-  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease;
+  transition: transform 2000ms ease, opacity 2000ms ease, -webkit-transform 2000ms ease; */
 }
 
 .main-slider__btn:hover {
