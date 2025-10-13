@@ -6,8 +6,8 @@ import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
-  title: "OMA NGO - Home",
-  description: "OMA NGO Organization",
+  title: "AfriCapital - Empowering African Entrepreneurs",
+  description: "We empower African entrepreneurs with the skills, tools, and networks they need to build sustainable businesses.",
 };
 
 export default function RootLayout({
