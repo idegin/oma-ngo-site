@@ -45,16 +45,15 @@ export default function AboutUsSection({ }: Props) {
                     <div className="col-xl-6">
                         <div className="about-one__right">
                             <div className="section-title text-left">
-                                <span className="section-title__tagline">Welcome to oxpins charity</span>
-                                <h2 className="section-title__title">Helping each other can make world better</h2>
+                                <span className="section-title__tagline">Welcome to AfriCapital</span>
+                                <h2 className="section-title__title">Building Africa's Wealth, Together.</h2>
                             </div>
-                            <p className="about-one__text">We help companies develop powerful corporate social
-                                responsibility, grantmaking, and employee engagement strategies. Our impact is about
-                                more than moving money to where it’s needed most it’s also about helping nonprofits
-                                access information and ideas that will help them listen, learn, and grow. </p>
+                            <p className="about-one__text">
+                                We empower African entrepreneurs with the skills, tools, and networks they need to build sustainable businesses. Our impact is about more than moving money—it's about investing in the people and ideas that will drive economic growth and transform communities across the continent.
+                            </p>
                             <div className="about-one__fund">
-                                <p className="about-one__fund-text">Helped fund <span>24,537</span> Projects in
-                                    <span>24</span> Countries, Benefiting over <br/> <span>8.2</span> Million people.</p>
+                                <p className="about-one__fund-text">We've equipped over <span>15,000</span> entrepreneurs across
+                                    <span>20</span> African nations, benefiting over <br/> <span>1,200</span> sustainable businesses.</p>
                             </div>
                             <ul className="list-unstyled about-one__points">
                                 <li>
@@ -62,8 +61,8 @@ export default function AboutUsSection({ }: Props) {
                                         <span className="icon-volunteer"></span>
                                     </div>
                                     <div className="text">
-                                        <h5><a href="become-volunteer.html">Join our team</a></h5>
-                                        <p>Lorem ipsum dolor sit amet not quis mis notted.</p>
+                                        <h5><a href="become-volunteer.html">Join our mission</a></h5>
+                                        <p>Share your expertise as a mentor or partner to help business leaders thrive.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -71,12 +70,12 @@ export default function AboutUsSection({ }: Props) {
                                         <span className="icon-solidarity"></span>
                                     </div>
                                     <div className="text">
-                                        <h5><a href="donate-now.html">Start donating</a></h5>
-                                        <p>Lorem ipsum dolor sit amet not quis mis notted.</p>
+                                        <h5><a href="donate-now.html">Fuel an enterprise</a></h5>
+                                        <p>Provide resources and training that turn ideas into thriving businesses.</p>
                                     </div>
                                 </li>
                             </ul>
-                            <a href="about.html" className="thm-btn about-one__btn">Discover More</a>
+                            <a href="/about" className="thm-btn about-one__btn">Discover More</a>
                         </div>
                     </div>
                 </div>

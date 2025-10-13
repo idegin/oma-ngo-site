@@ -37,10 +37,10 @@ export default function HeroSection({ }: Props) {
                                 <div className="row">
                                     <div className="col-xl-6 col-lg-8">
                                         <div className="main-slider__content-">
-                                            <p className="main-slider__sub-title text-[var(--oxpins-primary)]">Always donate for children</p>
-                                            <h1 className="main-slider__title text-white">Lend a Helping Hand to Those in Need</h1>
+                                            <p className="main-slider__sub-title text-[var(--oxpins-primary)]">Invest in African Entrepreneurs.</p>
+                                            <h1 className="main-slider__title text-white">Empower a Generation of Changemakers and Innovators.</h1>
                                             <div className="main-slider__btn-box">
-                                                <a href="about.html" className="thm-btn main-slider__btn"> Discover more</a>
+                                                <a href="/about" className="thm-btn main-slider__btn"> Discover more</a>
                                             </div>
                                         </div>
                                     </div>

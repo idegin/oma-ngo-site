@@ -22,14 +22,17 @@ export default function FAQSection({ }: Props) {
                         <div className="col-xl-6 col-lg-6">
                             <div className="faq-one__left">
                                 <div className="section-title text-left">
-                                    <span className="section-title__tagline">Recently asked questions</span>
-                                    <h2 className="section-title__title">People are frequently asking some questions from us
+                                    <span className="section-title__tagline">Frequently Asked Questions</span>
+                                    <h2 className="section-title__title">
+                                        Get Clear Answers on Empowering African Entrepreneurs
                                     </h2>
                                 </div>
-                                <p className="faq-one__text-1">Proactively procrastinate cross-platform results via extensive
-                                    ideas distinctively underwhelm enterprise. Compellingly plagiarize value-added sources
-                                    with inexpensive schemas.</p>
-                                <a href="faq.html" className="thm-btn faq-one__btn">Learn how to get help</a>
+                                <p className="faq-one__text-1">
+                                    Find detailed information on how our programs provide critical training, resources, and funding to help businesses thrive.
+                                </p>
+                                <a href="/about" className="thm-btn faq-one__btn">
+                                    Learn How to Apply
+                                </a>
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">

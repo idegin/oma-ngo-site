@@ -118,12 +118,15 @@ export default function OurProgramsSection({ }: Props) {
                         <div className="col-xl-4 col-lg-4">
                             <div className="events-one__left">
                                 <div className="section-title text-left">
-                                    <span className="section-title__tagline">Upcoming events</span>
-                                    <h2 className="section-title__title">Join our latest upcoming events</h2>
+                                    <span className="section-title__tagline">Empowerment Programs</span>
+                                    <h2 className="section-title__title">Discover Our Programs</h2>
                                 </div>
-                                <p className="events-one__text-1">There are many variations of passages of lorem ipsum available
-                                    but the majority have suffered.</p>
-                                <a href="event-details.html" className="thm-btn events-one__btn">Discover More</a>
+                                <p className="events-one__text-1">
+                                    Explore training, resources, and mentorship designed to help entrepreneurs start, grow, and scale.
+                                </p>
+                                <a href="/programs" className="thm-btn events-one__btn">
+                                    Explore Programs
+                                </a>
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-8">
