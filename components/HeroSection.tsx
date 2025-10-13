@@ -100,14 +100,14 @@ export default function HeroSection({ }: Props) {
 
                     </div>
 
-                    <div className="main-slider__nav">
+                    {/* <div className="main-slider__nav">
                         <div className="swiper-button-prev" id="main-slider__swiper-button-next">
                             <i className="icon-left-arrow"></i>
                         </div>
                         <div className="swiper-button-next" id="main-slider__swiper-button-prev">
                             <i className="icon-right-arrow"></i>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </section>
