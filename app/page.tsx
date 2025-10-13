@@ -5,15 +5,23 @@ import CTASection from '@/components/CTASection'
 import FAQSection from '@/components/FAQSection'
 import OurNumbers from '@/components/OurNumbers'
 import React from 'react'
+import CTASection2 from '@/components/CTASection2'
+import OurProgramsSection from '@/components/OurProgramsSection'
+import ClientsLogoSection from '@/components/ClientsLogoSection'
+import TestimonialSection from '@/components/TestimonialSection'
 
 export default function page() {
   return (
     <>
       <HeroSection />
       <AboutUsSection />
+      <CTASection2 />
+      <OurProgramsSection />
+      <ClientsLogoSection />
       <FAQSection />
       <OurNumbers />
       <BlogSection />
+      <TestimonialSection />
       <CTASection />
     </>
   )
