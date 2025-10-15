@@ -8,13 +8,14 @@ export default function CTASection() {
                     <div className="become-volunteer__inner">
                         <div className="become-volunteer__left">
                             <div className="section-title text-left">
-                                <span className="section-title__tagline">Become a volunteers</span>
-                                <h2 className="section-title__title">Join your hand with us for a better <br /> life and future
+                                <span className="section-title__tagline">Be a Catalyst for Change</span>
+                                <h2 className="section-title__title">
+                                    Your Donation Empowers African Entrepreneurs<br/> to Build and Scale
                                 </h2>
                             </div>
                         </div>
                         <div className="become-volunteer__right">
-                            <a href="become-volunteer.html" className="thm-btn become-volunteer__btn">Discover More</a>
+                            <a href="/donate" className="thm-btn become-volunteer__btn">Donate Now</a>
                         </div>
                     </div>
                 </div>

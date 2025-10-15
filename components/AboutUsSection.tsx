@@ -17,7 +17,8 @@ export default function AboutUsSection({ }: Props) {
                             <div className="about-one__img-box wow slideInLeft" data-wow-delay="100ms"
                                 data-wow-duration="2500ms">
                                 <div className="about-one__img">
-                                    <img src="/assets/images/resources/about-one-img-1.jpg" alt=""/>
+                                    <img src="/ai/Image_fx (10).jpg" alt=""/>
+                                    {/* <img src="/assets/images/resources/about-one-img-1.jpg" alt=""/> */}
                                 </div>
                                 <div className="about-one__img-border"></div>
                                 <div className="about-one__curved-circle-box">

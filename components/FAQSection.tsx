@@ -3,12 +3,48 @@ import React, { useEffect, useState } from 'react'
 
 type Props = {}
 
+interface FAQItem {
+    id: number;
+    question: string;
+    answer: string;
+}
+
+const faqItems: FAQItem[] = [
+    {
+        id: 1,
+        question: "What is the main goal of AfriCapital?",
+        answer: "AfriCapital exists to bridge the gap between ambition and opportunity for African entrepreneurs. We empower them with education, mentorship, and resources to start, grow, and scale sustainable businesses that drive economic growth across Africa and the diaspora."
+    },
+    {
+        id: 2,
+        question: "What kind of programs do you offer?",
+        answer: "Our programs are built on four key pillars: Learning & Development (courses, workshops), Access & Empowerment (tool grants, startup kits), Mentorship & Community (peer networks, mentors), and Visibility & Opportunities (showcases, events) for African businesses."
+    },
+    {
+        id: 3,
+        question: "Who is eligible for your programs?",
+        answer: "Our programs are designed for aspiring and existing entrepreneurs across Africa and the African diaspora. Whether you are just starting out or looking to scale your business, we offer tailored support to help you achieve your goals."
+    },
+    {
+        id: 4,
+        question: "How is my donation used?",
+        answer: "Your donation directly fuels our mission. It helps fund essential resources like startup toolkits and business grants, supports our free training programs, and builds the mentorship network that connects entrepreneurs with vital knowledge and opportunities."
+    }
+];
+
 export default function FAQSection({ }: Props) {
     const [show, setShow] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
-        setShow(true);
-    },[])
+        setTimeout(() => {
+            setShow(true);
+        }, 2000);
+    }, [])
+
+    const handleToggle = (index: number) => {
+        setActiveIndex(activeIndex === index ? -1 : index);
+    };
 
     if (!show) return false;
 
@@ -38,50 +74,22 @@ export default function FAQSection({ }: Props) {
                         <div className="col-xl-6 col-lg-6">
                             <div className="faq-one__right">
                                 <div className="accrodion-grp" data-grp-name="faq-one-accrodion">
-                                    <div className="accrodion active">
-                                        <div className="accrodion-title">
-                                            <h4>Nulla eu purus scelerisque, dignissim diam.</h4>
-                                        </div>
-                                        <div className="accrodion-content">
-                                            <div className="inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    {faqItems.map((item, index) => (
+                                        <div
+                                            key={item.id}
+                                            className={`accrodion ${activeIndex === index ? 'active' : ''} ${index === faqItems.length - 1 ? 'last-chiled' : ''}`}
+                                            onClick={() => handleToggle(index)}
+                                        >
+                                            <div className="accrodion-title">
+                                                <h4>{item.question}</h4>
+                                            </div>
+                                            <div className="accrodion-content">
+                                                <div className="inner">
+                                                    <p>{item.answer}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="accrodion">
-                                        <div className="accrodion-title">
-                                            <h4>Quisque non diam porta, ullamcorper dolor sit amet.</h4>
-                                        </div>
-                                        <div className="accrodion-content">
-                                            <div className="inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="accrodion">
-                                        <div className="accrodion-title">
-                                            <h4>How can I make a change to my application?</h4>
-                                        </div>
-                                        <div className="accrodion-content">
-                                            <div className="inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="accrodion last-chiled">
-                                        <div className="accrodion-title">
-                                            <h4>Sed mattis neque sed commodo efficitur.</h4>
-                                        </div>
-                                        <div className="accrodion-content">
-                                            <div className="inner">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

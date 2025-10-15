@@ -96,11 +96,11 @@ export default function TestimonialSection({ }: Props) {
     return (
         <>
             <section className="testimonial-one">
-                <div 
-                    className="testimonial-one-bg jarallax" 
-                    data-jarallax="" 
-                    data-speed="0.2" 
-                    data-imgposition="50% 0%" 
+                <div
+                    className="testimonial-one-bg jarallax"
+                    data-jarallax=""
+                    data-speed="0.2"
+                    data-imgposition="50% 0%"
                     style={{ backgroundImage: "url(/assets/images/backgrounds/testimonial-one-bg.jpg)" }}
                 ></div>
                 <div className="container">
@@ -108,13 +108,13 @@ export default function TestimonialSection({ }: Props) {
                         <div className="col-xl-6 col-lg-6">
                             <div className="testimonial-one__left">
                                 <div className="section-title text-left">
-                                    <span className="section-title__tagline">Our Testimonials</span>
-                                    <h2 className="section-title__title">What they are talking about oxpins</h2>
+                                    <span className="section-title__tagline">Impact Stories</span>
+                                    <h2 className="section-title__title">Hear from Our Entrepreneurs</h2>
                                 </div>
-                                <p className="testimonial-one__text-1">Nulla ultricies justo sit amet ante efficitur, eget
-                                    pharetra augue efficitur. Vestibulum viverra, dolor sit amet ultricies ornare, elit
-                                    justo pretium tellus.</p>
-                                <a href="#" className="thm-btn testimonial-one__btn">all testimonials</a>
+                                <p className="testimonial-one__text-1">
+                                    Discover how African business owners are transforming their ventures and communities through access to knowledge, resources, and networks.
+                                </p>
+                                {/* <a href="#" className="thm-btn testimonial-one__btn">all testimonials</a> */}
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
@@ -131,30 +131,30 @@ export default function TestimonialSection({ }: Props) {
                                 <div className="testimonial-one__img-1 testimonial-one__img-4 zoom-fade">
                                     <img src="/assets/images/testimonial/testimonial-img-4.jpg" alt="Testimonial decoration" />
                                 </div>
-                                <div 
+                                <div
                                     className="testimonial-one__carousel owl-carousel owl-theme thm-owl__carousel owl-loaded owl-drag"
                                     onMouseEnter={() => setIsAutoPlaying(false)}
                                     onMouseLeave={() => setIsAutoPlaying(true)}
                                 >
                                     <div className="owl-stage-outer">
-                                        <div 
-                                            className="owl-stage" 
-                                            style={{ 
-                                                transform: `translate3d(${translateX}px, 0px, 0px)`, 
-                                                transition: "all 0.5s ease 0s", 
-                                                width: `${totalWidth}px` 
+                                        <div
+                                            className="owl-stage"
+                                            style={{
+                                                transform: `translate3d(${translateX}px, 0px, 0px)`,
+                                                transition: "all 0.5s ease 0s",
+                                                width: `${totalWidth}px`
                                             }}
                                         >
                                             {allTestimonials.map((testimonial, index) => (
-                                                <div 
-                                                    key={`${testimonial.id}-${index}`} 
-                                                    className={getItemClass(index)} 
+                                                <div
+                                                    key={`${testimonial.id}-${index}`}
+                                                    className={getItemClass(index)}
                                                     style={{ width: `${itemWidth}px`, marginRight: `${itemMargin}px` }}
                                                 >
                                                     <div className="item">
                                                         <div className="testimonial-one__single">
-                                                            <div 
-                                                                className="testimonial-one__shape-1" 
+                                                            <div
+                                                                className="testimonial-one__shape-1"
                                                                 style={{ backgroundImage: "url(/assets/images/shapes/testimonial-one-shape-1.png)" }}
                                                             ></div>
                                                             <div className="testimonial-one__client-img">
@@ -176,18 +176,18 @@ export default function TestimonialSection({ }: Props) {
                                     </div>
                                 </div>
                                 <div className="owl-nav mt-3">
-                                    <button 
-                                        type="button" 
-                                        role="presentation" 
+                                    <button
+                                        type="button"
+                                        role="presentation"
                                         className="owl-prev bg-white h-10 w-10 rounded-xl"
                                         onClick={handlePrev}
                                         aria-label="Previous testimonial"
                                     >
                                         <span className="icon-left-arrow"></span>
                                     </button>
-                                    <button 
-                                        type="button" 
-                                        role="presentation" 
+                                    <button
+                                        type="button"
+                                        role="presentation"
                                         className="owl-next bg-white h-10 w-10 rounded-xl"
                                         onClick={handleNext}
                                         aria-label="Next testimonial"
