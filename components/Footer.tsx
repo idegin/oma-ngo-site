@@ -15,8 +15,9 @@ export default function Footer() {
                                         <a href="index.html"><img src="/brand/logo-white.png" alt="" /></a>
                                     </div>
                                     <div className="footer-widget__about-text-box">
-                                        <p className="footer-widget__about-text">Nulla ultricies justo sit amet ante efficitur,
-                                            eget pharetra augue efficitur. Vestibulum viverra, dolor sit amet ultricies.</p>
+                                        <p className="footer-widget__about-text">
+                                            AfriCapital empowers African entrepreneurs with business training, mentorship, and resources to start and scale sustainable businesses.
+                                        </p>
                                     </div>
                                     <div className="footer-widget__btn">
                                         <a href="donate-now.html"> <span className="fa fa-heart"></span>Donate now</a>

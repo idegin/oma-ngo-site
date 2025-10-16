@@ -65,7 +65,6 @@ export default function TestimonialSection({ }: Props) {
 
     const handleNext = () => {
         setCurrentIndex((prev) => {
-            // When we reach the end of the first set, reset to 0 for seamless loop
             if (prev >= testimonials.length) {
                 return 0;
             }
@@ -95,7 +94,7 @@ export default function TestimonialSection({ }: Props) {
 
     return (
         <>
-            <section className="testimonial-one">
+            <section className="testimonial-one max-w-screen">
                 <div
                     className="testimonial-one-bg jarallax"
                     data-jarallax=""
@@ -119,16 +118,16 @@ export default function TestimonialSection({ }: Props) {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                             <div className="testimonial-one__right">
-                                <div className="testimonial-one__img-1 zoom-fade">
+                                <div className="testimonial-one__img-1 zoom-fade md:block hidden">
                                     <img src="/assets/images/testimonial/testimonial-img-1.jpg" alt="Testimonial decoration" />
                                 </div>
-                                <div className="testimonial-one__img-1 testimonial-one__img-2 zoom-fade">
+                                <div className="testimonial-one__img-1 testimonial-one__img-2 zoom-fade md:block hidden">
                                     <img src="/assets/images/testimonial/testimonial-img-2.jpg" alt="Testimonial decoration" />
                                 </div>
-                                <div className="testimonial-one__img-1 testimonial-one__img-3 zoom-fade">
+                                <div className="testimonial-one__img-1 testimonial-one__img-3 zoom-fade md:block hidden">
                                     <img src="/assets/images/testimonial/testimonial-img-3.jpg" alt="Testimonial decoration" />
                                 </div>
-                                <div className="testimonial-one__img-1 testimonial-one__img-4 zoom-fade">
+                                <div className="testimonial-one__img-1 testimonial-one__img-4 zoom-fade md:block hidden">
                                     <img src="/assets/images/testimonial/testimonial-img-4.jpg" alt="Testimonial decoration" />
                                 </div>
                                 <div
@@ -149,9 +148,9 @@ export default function TestimonialSection({ }: Props) {
                                                 <div
                                                     key={`${testimonial.id}-${index}`}
                                                     className={getItemClass(index)}
-                                                    style={{ width: `${itemWidth}px`, marginRight: `${itemMargin}px` }}
+                                                    style={{ width: `${itemWidth}px`, marginRight: `${itemMargin}px`, maxWidth: '100vw' }}
                                                 >
-                                                    <div className="item">
+                                                    <div className="item max-w-[93vw]">
                                                         <div className="testimonial-one__single">
                                                             <div
                                                                 className="testimonial-one__shape-1"

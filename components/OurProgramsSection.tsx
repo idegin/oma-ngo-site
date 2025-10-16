@@ -110,7 +110,7 @@ export default function OurProgramsSection({ }: Props) {
 
     return (
         <>
-            <section className="events-one">
+            <section className="events-one overflow-hidden">
                 <div className="events-one-shape-1" style={{ backgroundImage: "url(assets/images/shapes/events-one-shape-1.png)" }}>
                 </div>
                 <div className="container">
@@ -130,7 +130,7 @@ export default function OurProgramsSection({ }: Props) {
                             </div>
                         </div>
                         <div className="col-xl-8 col-lg-8">
-                            <div className="events-one__right">
+                            <div className="events-one__right max-w-screen">
                                 <div 
                                     className="events-one__carousel owl-carousel owl-theme thm-owl__carousel owl-loaded owl-drag"
                                     onMouseEnter={() => setIsAutoPlaying(false)}
