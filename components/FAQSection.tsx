@@ -52,7 +52,7 @@ export default function FAQSection({ }: Props) {
         <>
             <section className="faq-one">
                 <div className="faq-one-shape-1" style={{ backgroundImage: "url(assets/images/shapes/faq-one-shape-1.png)" }}></div>
-                <div className="faq-one-bg" style={{ backgroundImage: "url(assets/images/backgrounds/faq-one-bg.png)" }}></div>
+                <div className="faq-one-bg md:w-[807px] w-[107px]" style={{ backgroundImage: "url(assets/images/backgrounds/faq-one-bg.png)" }}></div>
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-6 col-lg-6">

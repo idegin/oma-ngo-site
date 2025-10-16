@@ -14,7 +14,7 @@ export default function Header({ }: Props) {
             { label: 'Home', href: '/' },
             { label: 'About Us', href: '/about' },
             { label: 'Our Programs', href: '/programs' },
-            { label: 'Impact', href: '/impact' },
+            { label: 'Events', href: '/events' },
             { label: 'Blog', href: '/blog' },
             { label: 'Contact', href: '/contact' },
         ]
@@ -28,7 +28,7 @@ export default function Header({ }: Props) {
                             <div className="main-menu__left">
                                 <div className="main-menu__logo">
                                     <Link href="/">
-                                        <img src="/brand/logo-black.png" alt="logo" />
+                                        <img src="/brand/logo-black.png" alt="logo" className='md:max-w-[100%] max-w-[40%]' />
                                     </Link>
                                 </div>
                                 <div className="main-menu__shape-1 float-bob-x">

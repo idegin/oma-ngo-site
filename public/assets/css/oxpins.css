@@ -4413,7 +4413,7 @@ body.locked .page-wrapper {
   position: absolute;
   top: 0;
   left: 0;
-  width: 807px;
+  /* width: 807px; */
   height: 626px;
   opacity: 0.08;
   z-index: -1;
