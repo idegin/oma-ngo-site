@@ -14,7 +14,7 @@ export default function page({ }: Props) {
             <AboutUsSection />
             <CTASection2 />
             <FAQSection />
-            <PeopleSection />
+            {/*<PeopleSection />*/}
         </>
     )
 }

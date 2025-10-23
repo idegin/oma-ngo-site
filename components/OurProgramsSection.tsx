@@ -119,10 +119,10 @@ export default function OurProgramsSection({ }: Props) {
                             <div className="events-one__left">
                                 <div className="section-title text-left">
                                     <span className="section-title__tagline">Empowerment Programs</span>
-                                    <h2 className="section-title__title">Discover Our Programs</h2>
+                                    <h2 className="section-title__title">Empowerment Programs</h2>
                                 </div>
                                 <p className="events-one__text-1">
-                                    Explore training, resources, and mentorship designed to help entrepreneurs start, grow, and scale.
+                                    Find the popular cause <br/> and donate them
                                 </p>
                                 <a href="/programs" className="thm-btn events-one__btn">
                                     Explore Programs
