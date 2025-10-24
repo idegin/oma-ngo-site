@@ -1,36 +1,51 @@
-import PageHeroSection from '@/components/PageHeroSection'
-import Link from 'next/link'
-import React from 'react'
+import PageHeroSection from "@/components/PageHeroSection";
+import Link from "next/link";
+import React from "react";
 
 export default function NotFound() {
     return (
         <>
-            <PageHeroSection />
-            <section className="error-page">
-                <div className="error-page-shape" style={{ backgroundImage: "url(assets/images/shapes/error-page-shape.png)" }}>
-                </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-12">
-                            <div className="error-page__inner">
-                                <div className="error-page__title-box">
-                                    <h2 className="error-page__title">404</h2>
-                                    <h2 className="error-page__title-2">404</h2>
+            <PageHeroSection
+                title='404 Not Found'
+                breadcrumb={[{ label: "404 Not Found", href: "/404" }]}
+            />
+            <section className='error-page'>
+                <div
+                    className='error-page-shape'
+                    style={{
+                        backgroundImage:
+                            "url(assets/images/shapes/error-page-shape.png)",
+                    }}
+                ></div>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-xl-12'>
+                            <div className='error-page__inner'>
+                                <div className='error-page__title-box'>
+                                    <h2 className='error-page__title'>404</h2>
+                                    <h2 className='error-page__title-2'>404</h2>
                                 </div>
-                                <h3 className="error-page__tagline">Sorry we can't find that page <br />
-                                    you’re looking for.</h3>
+                                <h3 className='error-page__tagline'>
+                                    Sorry we can't find that page <br />
+                                    you’re looking for.
+                                </h3>
                                 {/* <form className="error-page__form">
                                 <div className="error-page__form-input">
                                     <input type="search" placeholder="Search here" />
                                     <button type="submit"><i className="icon-magnifying-glass"></i></button>
                                 </div>
                             </form> */}
-                                <Link href="/" className="thm-btn error-page__btn">back to home</Link>
+                                <Link
+                                    href='/'
+                                    className='thm-btn error-page__btn'
+                                >
+                                    back to home
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 }

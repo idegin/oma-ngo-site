@@ -46,7 +46,10 @@ type Props = {};
 export default function page({}: Props) {
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title='Donate'
+                breadcrumb={[{ label: "Donate", href: "/donate" }]}
+            />
             <section className='donate-now'>
                 <div className='container'>
                     <div className='row'>

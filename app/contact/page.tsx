@@ -48,7 +48,10 @@ type Props = {};
 export default function page({}: Props) {
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title='Contact Us'
+                breadcrumb={[{ label: "Contact Us", href: "/contact" }]}
+            />
             <ContactForm />
             <ContactInfo />
             <section className='google-map google-map-two'>

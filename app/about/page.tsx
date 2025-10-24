@@ -55,7 +55,10 @@ export default async function page({}: Props) {
 
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title='About Us'
+                breadcrumb={[{ label: "About Us", href: "/about" }]}
+            />
             <AboutUsSection />
             <CTASection2 />
             <FAQSection data={faqData} />

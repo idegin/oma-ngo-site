@@ -19,7 +19,17 @@ export default async function page({ params }: Props) {
 
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title={event?.data?.title || ""}
+                backgroundImage={event?.data?.event_image?.url as string}
+                breadcrumb={[
+                    { label: "Events", href: "/events" },
+                    {
+                        label: event?.data?.title || "",
+                        href: `/events/${slug}`,
+                    },
+                ]}
+            />
             <div className='event-details'>
                 <div className='container'>
                     <div className='row'>

@@ -2,12 +2,22 @@ import { AllDocumentTypes } from "@/prismicio-types";
 import * as prismic from "@prismicio/client";
 
 
-export const getBlog = async (client: prismic.Client<AllDocumentTypes>, currentPage: number, perPage: number) =>
+export const getBlog = async (client: prismic.Client<AllDocumentTypes>, currentPage: number, perPage: number, category?: string) =>
 {
     try {
+
+        const filters = [];
+
+        if (category) {
+            const categoryData = await client.getByUID("categories", category);
+            filters.push(prismic.filter.at("my.blog.category", categoryData.id));
+
+        }
+
         const blog = await client.getByType("blog", {
             pageSize: perPage,
             page: currentPage,
+            filters: filters,
             orderings: {
                 field: "document.first_publication_date",
                 direction: "desc",
@@ -63,12 +73,16 @@ export const getBlogBySlug = async (client: prismic.Client<AllDocumentTypes>, sl
             }
             `
         });
-        return { blog, latestBlogs: latestBlogs.results };
+
+        const categories = await client.getByType("categories");
+
+        return { blog, latestBlogs: latestBlogs.results, categories: categories.results };
     } catch (error) {
         console.error("Error fetching blog by slug:", error);
         return {
             blog: null,
-            latestBlogs: []
+            latestBlogs: [],
+            categories: []
         };
     }
 };

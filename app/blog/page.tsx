@@ -48,18 +48,36 @@ export const metadata: Metadata = {
 type Props = {
     searchParams: Promise<{
         page: number;
+        category: string;
     }>;
 };
 
 export const dynamic = "force-dynamic";
 export default async function page({ searchParams }: Props) {
-    const { page } = await searchParams;
+    const { page, category } = await searchParams;
     const currentPage = page || 1;
     const client = createClient();
-    const { blog, totalPages } = await getBlog(client, currentPage, 10);
+    const { blog, totalPages } = await getBlog(
+        client,
+        currentPage,
+        10,
+        category
+    );
+
+    const breadcrumb = [{ label: "Blog", href: "/blog" }];
+    if (category) {
+        breadcrumb.push({
+            label: category,
+            href: `/blog?category=${category}`,
+        });
+    }
+
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title={category ? category : "Blog"}
+                breadcrumb={breadcrumb}
+            />
             <MainBlogPage
                 blog={blog}
                 totalPages={totalPages}

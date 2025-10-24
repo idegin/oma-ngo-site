@@ -60,7 +60,10 @@ export default async function page({ searchParams }: PageProps) {
 
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title='Upcoming Events'
+                breadcrumb={[{ label: "Events", href: "/events" }]}
+            />
             <MainEventPage
                 events={events}
                 currentPage={currentPage}

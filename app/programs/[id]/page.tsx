@@ -25,7 +25,16 @@ export default async function page({ params }: Props) {
 
     return (
         <>
-            <PageHeroSection />
+            <PageHeroSection
+                title='Program Details'
+                breadcrumb={[
+                    { label: "Programs", href: "/programs" },
+                    {
+                        label: program?.program?.data?.title || "",
+                        href: `/programs/${id}`,
+                    },
+                ]}
+            />
             <div className='donation-details'>
                 <div className='container'>
                     <div className='row'>
