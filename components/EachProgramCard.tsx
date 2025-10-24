@@ -58,12 +58,12 @@ export default function EachProgramCard({ program }: EachProgramCardProps) {
                             <div className='causes-one__goals'>
                                 <p>
                                     <span>
-                                        ${program?.data?.total_enrolled || 0}
+                                        {program?.data?.total_enrolled || 0}
                                     </span>{" "}
-                                    Raised
+                                    Enrolled
                                 </p>
                                 <p>
-                                    <span>${program?.data?.goal || 0}</span>{" "}
+                                    <span>{program?.data?.goal || 0}</span>{" "}
                                     Goal
                                 </p>
                             </div>
