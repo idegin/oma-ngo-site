@@ -10,7 +10,7 @@ export default function EachProgramsLG({ program }: Props) {
     return (
         <>
             <div className='donations-list__single'>
-                <div className='row'>
+                <div className='row '>
                     <div className='col-xl-6 col-lg-6'>
                         <div className='donations-list__img md:h-[460px] h-[15rem] overflow-hidden md:rounded-bl-3xl'>
                             <img
@@ -34,7 +34,7 @@ export default function EachProgramsLG({ program }: Props) {
                                             "Program Title"}
                                     </a>
                                 </h3>
-                                <p className='donations-list__text'>
+                                <p className='donations-list__text line-clamp-2'>
                                     {program?.data?.excerpt ||
                                         "Program description not available."}
                                 </p>

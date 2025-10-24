@@ -36,7 +36,10 @@ export default function ProgramDetailsLeft({ program }: Props) {
                         </div>
                     </div>
                 </div>
-                <PostCTA />
+                <PostCTA
+                    goal={program?.data?.goal as number}
+                    total_enrolled={program?.data?.total_enrolled as number}
+                />
             </div>
         </>
     );

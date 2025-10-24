@@ -51,6 +51,8 @@ export const getProgramsBySlug = async (client: prismic.Client<AllDocumentTypes>
             `
         });
 
+        console.log(program);
+
         const latestPrograms = await client.getByType("program", {
             pageSize: 3,
             filters: [ prismic.filter.not('my.blog.uid', slug) ],
@@ -59,12 +61,12 @@ export const getProgramsBySlug = async (client: prismic.Client<AllDocumentTypes>
                 direction: "desc",
             },
             fetchLinks: [ "categories.title" ],
-            graphQuery: `
+            graphQuery: `{
                 programs{
                     title
                     featured_image
                 }
-        `});
+            }`});
 
         return {
             program,

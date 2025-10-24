@@ -1,4 +1,4 @@
-import { AllDocumentTypes, ClientsDocument, FaqsDocument, MetricsDocument } from "@/prismicio-types";
+import { AllDocumentTypes, ClientsDocument, FaqsDocument, MetricsDocument, TestimonialDocument } from "@/prismicio-types";
 import * as prismic from "@prismicio/client";
 
 export const getFaqStaticProps = async (
@@ -41,5 +41,20 @@ export const getClientsLogoStaticProps = async (
     } catch (error) {
         console.error("Error fetching Clients data:", error);
         return null;
+    }
+};
+
+
+
+export const getTestimonials = async (client: prismic.Client<AllDocumentTypes>) =>
+{
+    try {
+        const testimonials = await client.getByType("testimonial");
+
+        return testimonials.results as TestimonialDocument[];
+
+    } catch (error) {
+        console.error("Error fetching Testimonials:", error);
+        return [];
     }
 };

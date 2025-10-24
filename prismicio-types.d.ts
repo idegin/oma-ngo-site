@@ -602,6 +602,71 @@ export type ProgramDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Testimonial documents
+ */
+interface TestimonialDocumentData {
+  /**
+   * Name field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Image field in *Testimonial*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Designation field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Volunteer, Donor, Volunteer Coordinator ..
+   * - **API ID Path**: testimonial.designation
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  designation: prismic.KeyTextField;
+
+  /**
+   * Message field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.message
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  message: prismic.KeyTextField;
+}
+
+/**
+ * Testimonial document from Prismic
+ *
+ * - **API ID**: `testimonial`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TestimonialDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TestimonialDocumentData>,
+    "testimonial",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | BlogDocument
   | CategoriesDocument
@@ -609,7 +674,8 @@ export type AllDocumentTypes =
   | EventsDocument
   | FaqsDocument
   | MetricsDocument
-  | ProgramDocument;
+  | ProgramDocument
+  | TestimonialDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -648,6 +714,8 @@ declare module "@prismicio/client" {
       MetricsDocumentData,
       ProgramDocument,
       ProgramDocumentData,
+      TestimonialDocument,
+      TestimonialDocumentData,
       AllDocumentTypes,
     };
   }

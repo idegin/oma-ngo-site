@@ -28,7 +28,7 @@ export default function EachProgramCard({ program }: EachProgramCardProps) {
                                 {program?.data?.title as string}
                             </a>
                         </h3>
-                        <p className='causes-one__text'>
+                        <p className='causes-one__text '>
                             {program?.data?.excerpt as string}
                         </p>
                         <div className='causes-one__progress'>

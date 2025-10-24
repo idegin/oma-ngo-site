@@ -16,7 +16,7 @@ export default function EachEvents({ event }: Props) {
                     <div
                         className='min-h-[30rem] w-full'
                         style={{
-                            backgroundImage: `url(https://dummyimage.com/400x400)`,
+                            backgroundImage: `url(${event?.data?.event_image?.url})`,
                         }}
                     />
                     <div className='events-one__date'>

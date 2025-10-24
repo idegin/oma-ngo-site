@@ -54,6 +54,7 @@ export default function EventRight({ event }: Props) {
                 {event?.data?.map_link && (
                     <div className='event-details__map'>
                         <iframe
+                            // @ts-ignore
                             src={event?.data?.map_link?.url || ""}
                             className='event-details-map__one'
                             allowFullScreen

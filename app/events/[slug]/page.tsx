@@ -11,10 +11,12 @@ interface Props {
         slug: string;
     }>;
 }
+export const dynamic = "force-dynamic";
 export default async function page({ params }: Props) {
     const { slug } = await params;
     const client = createClient();
     const event = await getEventBySlug(client, slug);
+
     return (
         <>
             <PageHeroSection />

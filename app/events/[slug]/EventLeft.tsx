@@ -42,6 +42,7 @@ export default function EventLeft({ event }: Props) {
             <div className='event-details__bottom'>
                 <div className='event-details__btn-box'>
                     <a
+                        // @ts-ignore
                         href={event?.data?.event_link?.url || ""}
                         className='thm-btn event-details__btn'
                     >

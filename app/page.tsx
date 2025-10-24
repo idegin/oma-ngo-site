@@ -15,20 +15,29 @@ import {
     getClientsLogoStaticProps,
     getFaqStaticProps,
     getMetricsStaticProps,
+    getTestimonials,
 } from "@/lib/queries/static-queries.query";
 import { getPrograms } from "@/lib/queries/programs.query";
 import { getBlog } from "@/lib/queries/blog.query";
 
+export const dynamic = "force-dynamic";
 export default async function page() {
     const client = createClient();
-    const [faqData, metricsData, clientsLogoData, programsData, blogData] =
-        await Promise.all([
-            getFaqStaticProps(client),
-            getMetricsStaticProps(client),
-            getClientsLogoStaticProps(client),
-            getPrograms(client, 1, 3),
-            getBlog(client, 1, 3),
-        ]);
+    const [
+        faqData,
+        metricsData,
+        clientsLogoData,
+        programsData,
+        blogData,
+        testimonialsData,
+    ] = await Promise.all([
+        getFaqStaticProps(client),
+        getMetricsStaticProps(client),
+        getClientsLogoStaticProps(client),
+        getPrograms(client, 1, 3),
+        getBlog(client, 1, 3),
+        getTestimonials(client),
+    ]);
 
     console.log("Clients Logo Data:", clientsLogoData);
 
@@ -43,7 +52,7 @@ export default async function page() {
             <ClientsLogoSection clientsData={clientsLogoData} />
             <ProgramsSection programsData={programsData.programs} />
             <BlogSection blogData={blogData.blog} />
-            <TestimonialSection />
+            <TestimonialSection testimonials={testimonialsData} />
             <CTASection />
         </>
     );
