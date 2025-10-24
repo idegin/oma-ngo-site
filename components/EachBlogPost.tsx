@@ -8,25 +8,25 @@ export default function EachBlogPost({ }: Props) {
             <div className="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                 <div className="news-one__single">
                     <div className="news-one__img">
-                        <img src="assets/images/blog/news-1-1.jpg" alt="" />
+                        <img src="/assets/images/blog/news-1-1.jpg" alt="" />
                     </div>
                     <div className="news-one__content-box">
                         <div className="news-one__content-inner">
                             <div className="news-one__content">
                                 <ul className="list-unstyled news-one__meta">
-                                    <li><a href="news-details.html"><i className="far fa-user-circle"></i> Admin</a>
+                                    <li><a href="/blog/123"><i className="far fa-user-circle"></i> Admin</a>
                                     </li>
-                                    <li><a href="news-details.html"><i className="fas fa-comments"></i> 2
+                                    <li><a href="/blog/123"><i className="fas fa-comments"></i> 2
                                         Comments</a>
                                     </li>
                                 </ul>
-                                <h3 className="news-one__title"><a href="news-details.html">How does the
+                                <h3 className="news-one__title"><a href="/blog/123">How does the
                                     malnutrition
                                     affect children?</a></h3>
                             </div>
                             <div className="news-one__bottom">
                                 <div className="news-one__read-more">
-                                    <a href="news-details.html"> <span className="icon-right-arrow"></span> Read
+                                    <a href="/blog/123"> <span className="icon-right-arrow"></span> Read
                                         More</a>
                                 </div>
                                 <div className="news-one__share">

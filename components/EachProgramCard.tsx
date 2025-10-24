@@ -10,7 +10,8 @@ export default function EachProgramCard() {
                     </div>
                 </div>
                 <div className="causes-one__content">
-                    <h3 className="causes-one__title"><a href="donation-details.html">It is a long
+                    <h3 className="causes-one__title">
+                        <a href="/programs/123">It is a long
                         established
                         fact that a reader</a>
                     </h3>
