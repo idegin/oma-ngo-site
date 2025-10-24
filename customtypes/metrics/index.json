@@ -1,0 +1,39 @@
+{
+  "format": "custom",
+  "id": "metrics",
+  "label": "Metrics",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "entrepreneurs_equipped": {
+        "type": "Text",
+        "config": {
+          "label": "Entrepreneurs Equipped",
+          "placeholder": ""
+        }
+      },
+      "businesses_launched": {
+        "type": "Text",
+        "config": {
+          "label": "Businesses Launched",
+          "placeholder": ""
+        }
+      },
+      "countries_served": {
+        "type": "Text",
+        "config": {
+          "label": "Countries Served",
+          "placeholder": ""
+        }
+      },
+      "mentors_and_partners": {
+        "type": "Text",
+        "config": {
+          "label": "Mentors and Partners",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

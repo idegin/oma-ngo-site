@@ -1,23 +1,29 @@
-import EachBlogPost from '@/components/EachBlogPost'
-import PageHeroSection from '@/components/PageHeroSection'
-import React from 'react'
+import EachBlogPost from "@/components/EachBlogPost";
+import PageHeroSection from "@/components/PageHeroSection";
+import { createClient } from "@/prismicio";
+import { getBlog } from "@/lib/queries/blog.query";
+import React from "react";
+import MainBlogPage from "./(components)/MainBlogPage";
 
-type Props = {}
+type Props = {
+    searchParams: Promise<{
+        page: number;
+    }>;
+};
 
-export default function page({ }: Props) {
+export default async function page({ searchParams }: Props) {
+    const { page } = await searchParams;
+    const currentPage = page || 1;
+    const client = createClient();
+    const { blog, totalPages } = await getBlog(client, currentPage, 10);
     return (
         <>
             <PageHeroSection />
-            <section className="news-page">
-                <div className="container">
-                    <div className="row">
-                        <EachBlogPost />
-                        <EachBlogPost />
-                        <EachBlogPost />
-                        <EachBlogPost />
-                    </div>
-                </div>
-            </section>
+            <MainBlogPage
+                blog={blog}
+                totalPages={totalPages}
+                currentPage={currentPage}
+            />
         </>
-    )
+    );
 }
