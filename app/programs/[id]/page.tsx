@@ -1,11 +1,27 @@
-import React from 'react'
-import ProgramDetailsLeft from './ProgramDetailsLeft'
-import PageHeroSection from '@/components/PageHeroSection'
-import ProgramRight from './ProgramRight'
+import React from "react";
+import ProgramDetailsLeft from "./ProgramDetailsLeft";
+import PageHeroSection from "@/components/PageHeroSection";
+import ProgramRight from "./ProgramRight";
+import { createClient } from "@/prismicio";
+import { getProgramsBySlug } from "@/lib/queries/programs.query";
+import { notFound } from "next/navigation";
+import { ProgramDocument } from "@/prismicio-types";
 
-type Props = {}
+interface Props {
+    params: Promise<{
+        id: string;
+    }>;
+}
 
-export default function page({ }: Props) {
+export default async function page({ params }: Props) {
+    const { id } = await params;
+    const client = createClient();
+    const program = await getProgramsBySlug(client, id);
+
+    if (!program?.program) {
+        notFound();
+    }
+
     return (
         <>
             <PageHeroSection />
@@ -13,14 +29,21 @@ export default function page({ }: Props) {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-xl-8 col-lg-7'>
-                            <ProgramDetailsLeft />
+                            <ProgramDetailsLeft
+                                program={program?.program as ProgramDocument}
+                            />
                         </div>
                         <div className='col-xl-4 col-lg-5'>
-                            <ProgramRight />
+                            <ProgramRight
+                                latestPrograms={
+                                    program?.latestPrograms as ProgramDocument[]
+                                }
+                                program={program?.program as ProgramDocument}
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </>
-    )
+    );
 }

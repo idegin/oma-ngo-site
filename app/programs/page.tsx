@@ -1,21 +1,30 @@
-import PageHeroSection from '@/components/PageHeroSection'
-import React from 'react'
-import EachProgramsLG from './EachProgramsLG'
+import PageHeroSection from "@/components/PageHeroSection";
+import React from "react";
+import EachProgramsLG from "./(components)/EachProgramsLG";
+import { createClient } from "@/prismicio";
+import { getPrograms } from "@/lib/queries/programs.query";
+import Pagination from "@/components/Pagination";
+import MainProgramsPage from "./(components)/MainProgramsPage";
 
-export default function page() {
+interface PageProps {
+    searchParams: Promise<{
+        page: number;
+    }>;
+}
+export default async function page({ searchParams }: PageProps) {
+    const { page } = await searchParams;
+    const currentPage = page || 1;
+    const client = createClient();
+    const { programs, totalPages } = await getPrograms(client, currentPage, 10);
+
     return (
         <>
             <PageHeroSection />
-            <div className='donations-list'>
-                <div className='container'>
-                    <div className='donations-list__inner'>
-                        <EachProgramsLG />
-                        <EachProgramsLG />
-                        <EachProgramsLG />
-                        <EachProgramsLG />
-                    </div>
-                </div>
-            </div>
+            <MainProgramsPage
+                programs={programs}
+                currentPage={currentPage}
+                totalPages={totalPages}
+            />
         </>
-    )
+    );
 }

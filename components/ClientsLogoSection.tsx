@@ -1,7 +1,10 @@
-'use client'
-import React, { useState, useEffect } from 'react'
+"use client";
+import { ClientsDocument } from "@/prismicio-types";
+import React, { useState, useEffect } from "react";
 
-type Props = {}
+type Props = {
+    clientsData: ClientsDocument | null;
+};
 
 interface BrandItem {
     id: number;
@@ -9,25 +12,14 @@ interface BrandItem {
     alt: string;
 }
 
-const brandLogos: BrandItem[] = [
-    { id: 1, image: "/assets/images/brand/brand-1-1.png", alt: "Brand 1" },
-    { id: 2, image: "/assets/images/brand/brand-1-2.png", alt: "Brand 2" },
-    { id: 3, image: "/assets/images/brand/brand-1-3.png", alt: "Brand 3" },
-    { id: 4, image: "/assets/images/brand/brand-1-4.png", alt: "Brand 4" },
-    { id: 5, image: "/assets/images/brand/brand-1-5.png", alt: "Brand 5" },
-    { id: 6, image: "/assets/images/brand/brand-1-6.png", alt: "Brand 6" },
-];
-
-// Duplicate the array for infinite loop effect
-const allBrands = [...brandLogos, ...brandLogos];
-
-export default function ClientsLogoSection({ }: Props) {
+export default function ClientsLogoSection({ clientsData }: Props) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const itemsPerView = 6;
     const itemWidth = 111.667;
     const itemMargin = 100;
-    const totalWidth = (itemWidth + itemMargin) * allBrands.length;
+    const totalWidth =
+        (itemWidth + itemMargin) * (clientsData?.data.items?.length || 0);
 
     useEffect(() => {
         if (!isAutoPlaying) return;
@@ -35,7 +27,7 @@ export default function ClientsLogoSection({ }: Props) {
         const interval = setInterval(() => {
             setCurrentIndex((prev) => {
                 // When we reach the end of the first set, reset to 0 for seamless loop
-                if (prev >= brandLogos.length) {
+                if (prev >= (clientsData?.data.items?.length || 0)) {
                     return 0;
                 }
                 return prev + 1;
@@ -65,35 +57,45 @@ export default function ClientsLogoSection({ }: Props) {
 
     return (
         <>
-            <section className="brand-one">
-                <div className="container">
-                    <div 
-                        className="thm-swiper__slider swiper-container swiper-container-initialized swiper-container-horizontal"
+            <section className='brand-one'>
+                <div className='container'>
+                    <div
+                        className='thm-swiper__slider swiper-container swiper-container-initialized swiper-container-horizontal'
                         onMouseEnter={() => setIsAutoPlaying(false)}
                         onMouseLeave={() => setIsAutoPlaying(true)}
                     >
-                        <div 
-                            className="swiper-wrapper" 
-                            style={{ 
-                                transform: `translate3d(${translateX}px, 0px, 0px)`, 
+                        <div
+                            className='swiper-wrapper'
+                            style={{
+                                transform: `translate3d(${translateX}px, 0px, 0px)`,
                                 transitionDuration: "500ms",
-                                width: `${totalWidth}px`
+                                width: `${totalWidth}px`,
                             }}
                         >
-                            {allBrands.map((brand, index) => (
-                                <div 
-                                    key={`${brand.id}-${index}`} 
+                            {clientsData?.data.items?.map((brand, index) => (
+                                <div
+                                    key={`${brand.name}-${index}`}
                                     className={getSlideClass(index)}
-                                    style={{ width: `${itemWidth}px`, marginRight: `${itemMargin}px` }}
+                                    style={{
+                                        width: `${itemWidth}px`,
+                                        marginRight: `${itemMargin}px`,
+                                    }}
                                 >
-                                    <img src={brand.image} alt={brand.alt} />
+                                    <img
+                                        src={brand.logo?.url as string}
+                                        alt={brand?.name as string}
+                                    />
                                 </div>
                             ))}
                         </div>
-                        <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        <span
+                            className='swiper-notification'
+                            aria-live='assertive'
+                            aria-atomic='true'
+                        ></span>
                     </div>
                 </div>
             </section>
         </>
-    )
+    );
 }
